@@ -7,15 +7,17 @@ namespace Environment {
     public class Computer : MonoBehaviour, IInteractable {
         [SerializeField]
         private List<Task> taskList = new(); // Put your stack/queue here :)
-        private Queue<Task> taskQueue;
+        private GenericQueue<Task> taskQueue;
 
         private Task currenTask;
 
-
-
         private void Awake()
         {
-            taskQueue = new Queue<Task>(taskList);      
+            taskQueue = new GenericQueue<Task>();
+            foreach (var task in taskList)
+            {
+                taskQueue.Enqueue(task);
+            }
         }
 
         public void OnInteract()
