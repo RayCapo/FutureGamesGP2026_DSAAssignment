@@ -2,8 +2,10 @@ using Environment;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Player {
-    public class PlayerMovement : MonoBehaviour {
+namespace Player
+{
+    public class PlayerMovement : MonoBehaviour
+    {
         // this is a test change for the git lecture
         [SerializeField]
         private Animator animator = null;
@@ -11,6 +13,10 @@ namespace Player {
         [Header("Input")]
         [SerializeField]
         private InputActionReference moveAction = null;
+        [SerializeField]
+        private InputActionReference rightclickAction = null;
+        //private InputActionReference lookAction = null;
+        
         [SerializeField]
         private InputActionReference interactAction = null;
 
@@ -23,13 +29,19 @@ namespace Player {
 
         private Vector2 movementInput = Vector2.zero;
 
-        private void Awake() {
-            if(!animator) {
+
+        float rotationSpeed = 180;
+
+        private void Awake()
+        {
+            if (!animator)
+            {
                 Debug.LogError("Animator not set");
                 return;
             }
 
-            if(!moveAction || !interactAction) {
+            if (!moveAction || !interactAction)
+            {
                 Debug.LogError("Input actions not set");
                 return;
             }
@@ -40,30 +52,54 @@ namespace Player {
             interactAction.action.performed += OnInteract;
         }
 
-        private void OnMove(InputAction.CallbackContext context) {
+
+
+
+        private void OnMove(InputAction.CallbackContext context)
+        {
+            
             movementInput = context.ReadValue<Vector2>();
             animator.SetBool("bIsMoving", movementInput != Vector2.zero);
         }
 
-        private void OnInteract(InputAction.CallbackContext context) {
+        private void OnInteract(InputAction.CallbackContext context)
+        {
             Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, interactionRange);
             IInteractable interactable = hit.collider?.gameObject.GetComponentInParent<IInteractable>();
-            if(interactable != null) {
+            if (interactable != null)
+            {
                 interactable.OnInteract();
             }
         }
 
-        private void Update() {
-            transform.position += (new Vector3(movementInput.x, 0f, movementInput.y)) * (movementSpeed * Time.deltaTime);
+        private void Update()
+        {
+            if (rightclickAction.action.IsPressed())
+            {
+                transform.Rotate(0, movementInput.x * rotationSpeed * Time.deltaTime, 0);
+                return;
+            }
+
+            //Vector3 move = transform.forward * movementInput.y + transform.right * movementInput.x;
+            transform.position += (transform.forward * movementInput.y + transform.right * movementInput.x) * (movementSpeed * Time.deltaTime);
         }
 
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
+            moveAction.action.performed += OnMove;
+            moveAction.action.canceled += OnMove;
+
+            interactAction.action.performed += OnInteract;
+
             moveAction.action.Enable();
             interactAction.action.Enable();
+
+
         }
 
-        private void OnDisable() {
+        private void OnDisable()
+        {
             moveAction.action.performed -= OnMove;
             moveAction.action.canceled -= OnMove;
 

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cf4b73750ae354db830e1d4ac392da, type: 3}
+  m_Name: Gather Json Task
+  m_EditorClassIdentifier: Assembly-CSharp::Environment.Tasks.GatherJsonTask
+  textToPrint: This Task will Gather Personal information
+  json: {fileID: 4900000, guid: b29d8dfaaecdbdd499f8fddb0990099b, type: 3}
+  workerData: {fileID: 11400000, guid: 8b4b1e4aa2c77f44cae01c7f3de1262b, type: 2}
