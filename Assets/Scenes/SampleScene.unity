@@ -5851,17 +5851,25 @@ PrefabInstance:
       value: COMPUTER
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
-      propertyPath: 'taskList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 518654200891ca94e9240a6ea2b82e13, type: 2}
+      propertyPath: taskList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
-      propertyPath: 'taskList.Array.data[1]'
+      propertyPath: 'taskList.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: e877782d56a339d48ac684d6a36038b0, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
-      propertyPath: 'taskList.Array.data[2]'
+      propertyPath: 'taskList.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: a8a054ec6c9003049b5a641ce69a7031, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'taskList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 518654200891ca94e9240a6ea2b82e13, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'taskList.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a6a51a647abc994dbda2b642205d11f, type: 2}
     - target: {fileID: 1295098900027692195, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: playerMovement
       value: 
