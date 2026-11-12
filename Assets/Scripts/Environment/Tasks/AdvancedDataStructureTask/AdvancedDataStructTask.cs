@@ -33,12 +33,11 @@ namespace Environment.Tasks
 
             if(employeeSearchTree == null)
             {
-                //Create a list of employees from the array (copy)
+                // (copy) Create a list of employees from the array
                 List<WorkerData.Employee> employeesList = new List<WorkerData.Employee>(workerData.employees);
 
                 //Create a new instance of the EmployeeSearchTree and build the tree with the sorted list
                 employeeSearchTree = new EmployeeSearchTree();
-
 
                 //Build the tree with the sorted list
                 employeeSearchTree.Build(employeesList);
@@ -50,7 +49,9 @@ namespace Environment.Tasks
 
             foreach (WorkerData.Employee employee in result)
             {
-                Debug.Log(JsonUtility.ToJson(employee));
+                //Debug.Log(JsonUtility.ToJson(employee));
+                Debug.Log(employee.name + ": " + employee.lastEntranceInEngineRoom);
+                Debug.Log(employee.name + ": " + employee.lastExitFromEngineRoom);
             }
 
             stopwatch.Stop();
