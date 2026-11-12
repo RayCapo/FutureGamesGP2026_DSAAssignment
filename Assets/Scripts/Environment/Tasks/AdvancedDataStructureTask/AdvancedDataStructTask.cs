@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
+﻿
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 namespace Environment.Tasks
 {
@@ -18,8 +19,6 @@ namespace Environment.Tasks
             employeeSearchTree = null; // Reset the search tree before building it
 
             AdvancedDataStructTaskGUI.Instance.OpenGUI(this);
-
-
         }
 
         public override void Resume()
@@ -27,12 +26,38 @@ namespace Environment.Tasks
             AdvancedDataStructTaskGUI.Instance.OpenGUI(this);
         }
 
-        public void SortAndBuildTree()
+        public void SortBuildAndSearch(int minimumYear, int maximumYear, int minimumMonth, int maximumMonth, int minimumDay, int maximumDay, int minimumHours, int maximumHours)
         {
-            List<WorkerData.Employee> employeesList = new List<WorkerData.Employee>(workerData.employees);
 
-            employeeSearchTree = new EmployeeSearchTree();
-            employeeSearchTree.Build(employeesList);
+            System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
+
+            if(employeeSearchTree == null)
+            {
+                //Create a list of employees from the array (copy)
+                List<WorkerData.Employee> employeesList = new List<WorkerData.Employee>(workerData.employees);
+
+                //Create a new instance of the EmployeeSearchTree and build the tree with the sorted list
+                employeeSearchTree = new EmployeeSearchTree();
+
+
+                //Build the tree with the sorted list
+                employeeSearchTree.Build(employeesList);
+            }
+
+            List<WorkerData.Employee> result = employeeSearchTree.Search(minimumYear, maximumYear, minimumMonth, maximumMonth, minimumDay, maximumDay, minimumHours, maximumHours);
+
+            //Debug.Log("Employees found between " + minimumYear + " and " + maximumYear + ": " + result.Count);
+
+            foreach (WorkerData.Employee employee in result)
+            {
+                Debug.Log(JsonUtility.ToJson(employee));
+            }
+
+            stopwatch.Stop();
+
+            Debug.Log("Time taken: " + stopwatch.ElapsedMilliseconds + " ms");
+            Debug.Log("Time taken: " + stopwatch.ElapsedTicks + " ticks");
+
 
             Complete();
         }

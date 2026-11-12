@@ -13,7 +13,6 @@ namespace Environment.Tasks
 
         public override void Execute()
         {
-
             isCompleted = false;
             SearchTaskGUI.Instance.OpenGUI(this);
 
@@ -35,10 +34,10 @@ namespace Environment.Tasks
             Debug.Log("Searching " + lowValue + " to " + highValue);
             Debug.Log("firstIndex = " + firstIndex + ", lastIndex = " + lastIndex);
 
-            //for (int i = firstIndex; i <= lastIndex; i++)
-            //{
-            //    Debug.Log(workerData.employees[i].name + ": " + workerData.employees[i].lastEntranceInEngineRoom);
-            //}
+            for (int i = firstIndex; i <= lastIndex; i++)
+            {
+                Debug.Log(workerData.employees[i].name + ": " + workerData.employees[i].lastEntranceInEngineRoom);
+            }
 
             stopwatch.Stop();
 

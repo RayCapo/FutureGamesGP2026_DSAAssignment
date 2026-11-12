@@ -1850,7 +1850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 596854603}
   m_Layer: 0
-  m_Name: Props
+  m_Name: Props (computer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1934,6 +1934,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83dde6fa4b7e0a842b3fd9c6dd318804, type: 3}
   m_PrefabInstance: {fileID: 597357349}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &602938692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602938694}
+  - component: {fileID: 602938693}
+  m_Layer: 0
+  m_Name: test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &602938693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602938692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb10fce483c88e4191a7da3ec0650ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Test
+--- !u!4 &602938694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602938692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7067, y: 2.13633, z: 8.59444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &614241986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5851,26 +5895,22 @@ PrefabInstance:
       value: COMPUTER
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
-      propertyPath: taskList.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'taskList.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: e877782d56a339d48ac684d6a36038b0, type: 2}
+      objectReference: {fileID: 11400000, guid: 5a6a51a647abc994dbda2b642205d11f, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'taskList.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: a8a054ec6c9003049b5a641ce69a7031, type: 2}
+      objectReference: {fileID: 11400000, guid: e877782d56a339d48ac684d6a36038b0, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'taskList.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 518654200891ca94e9240a6ea2b82e13, type: 2}
-    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
-      propertyPath: 'taskList.Array.data[5]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 5a6a51a647abc994dbda2b642205d11f, type: 2}
+      objectReference: {fileID: 11400000, guid: a8a054ec6c9003049b5a641ce69a7031, type: 2}
     - target: {fileID: 1295098900027692195, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 90655385}
+    - target: {fileID: 3084699924999025905, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 90655385}
@@ -6006,3 +6046,4 @@ SceneRoots:
   - {fileID: 8404672306686481740}
   - {fileID: 336675535}
   - {fileID: 1194934668}
+  - {fileID: 602938694}
