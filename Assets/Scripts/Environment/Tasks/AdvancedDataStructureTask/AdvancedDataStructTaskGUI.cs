@@ -84,7 +84,8 @@ public class AdvancedDataStructTaskGUI : MonoBehaviour
 
     }
     private bool InputCheckGuard(out int yearsLowValue, out int yearsHighValue, 
-        out int monthLowValue, out int monthHighValue, out int dayLowValue, out int dayHighValue, out int hoursLowValue, out int hoursHighValue)
+        out int monthLowValue, out int monthHighValue, out int dayLowValue, 
+        out int dayHighValue, out int hoursLowValue, out int hoursHighValue)
     {
         yearsLowValue = 0;
         yearsHighValue = 0;
